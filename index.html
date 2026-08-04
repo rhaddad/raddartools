@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RaddarTools - Do Conceito à Solução Digital com Engenharia de IA</title>
+    <title>RaddarTools - AI Product Builder: Do Conceito à Solução Digital com Engenharia de IA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -12,8 +12,8 @@
     <style>
         :root {
             --primary-color: #00bcd4; /* Cyan - inspired by modern tech, energetic */
-            --secondary-color: #673ab7; /* Deep Purple - sophistication, intelligence */
-            --accent-color: #ffeb3b; /* Amber - warning, highlights, energy */
+            --secondary-color: #94a3b8; /* cinza-azulado neutro */
+            --accent-color: #fbbf24; /* Amber - warning, highlights, energy */
             --text-color: #e0e0e0; /* Light gray for readability */
             --background-dark: #1a1a2e; /* Dark blue-purple - deep tech, night sky */
             --background-light: #2e3b55; /* Slightly lighter dark - content background */
@@ -72,13 +72,12 @@
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary-color);
-            text-shadow: 0 0 8px var(--primary-color);
+            
         }
 
         .logo img {
             height: 80px;
             margin-right: 10px;
-            filter: drop-shadow(0 0 5px var(--primary-color));
         }
 
         nav ul {
@@ -120,7 +119,6 @@
 
         nav a.active {
             color: var(--primary-color);
-            text-shadow: 0 0 5px var(--primary-color);
         }
 
         .language-switcher {
@@ -152,7 +150,6 @@
         .language-switcher img.active-lang {
             filter: grayscale(0%);
             border-color: var(--primary-color);
-            box-shadow: 0 0 10px var(--primary-color);
         }
 
         main {
@@ -206,13 +203,12 @@
         h1 {
             font-size: 3.5rem;
             color: var(--accent-color);
-            text-shadow: 0 0 15px rgba(255, 235, 59, 0.5);
+            
         }
 
         h2 {
             font-size: 2.8rem;
             color: var(--primary-color);
-            text-shadow: 0 0 10px rgba(0, 188, 212, 0.4);
             margin-top: 2rem;
             margin-bottom: 1rem;
         }
@@ -245,7 +241,6 @@
             transition: all 0.3s ease;
             display: inline-block;
             margin-top: 2rem;
-            box-shadow: 0 0 15px rgba(0, 188, 212, 0.6);
             border: none;
             cursor: pointer;
         }
@@ -253,7 +248,6 @@
         .button-primary:hover {
             background-color: var(--accent-color);
             color: var(--background-dark);
-            box-shadow: 0 0 20px rgba(255, 235, 59, 0.8);
             transform: translateY(-3px);
         }
 
@@ -277,25 +271,13 @@
             overflow: hidden;
         }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0,188,212,0.1) 0%, rgba(0,188,212,0) 70%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
         .card:hover::before {
             opacity: 1;
         }
 
         .card:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6), 0 0 30px var(--primary-color);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
         }
 
         .card h4 {
@@ -370,7 +352,6 @@
 
         .mission-log li.completed {
             border-left-color: var(--accent-color);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 235, 59, 0.4);
         }
 
         .mission-log li.completed h4 {
@@ -417,27 +398,12 @@
             margin-top: 3rem;
         }
 
-        @keyframes glow {
-            0% { box-shadow: 0 0 5px var(--primary-color); }
-            50% { box-shadow: 0 0 20px var(--primary-color); }
-            100% { box-shadow: 0 0 5px var(--primary-color); }
-        }
-
         .glowing-text {
-            animation: glow 2s infinite alternate;
-            color: var(--primary-color);
+            color: var(--text-color);
         }
         
         .animated-gradient {
-            background: linear-gradient(45deg, #00bcd4, #673ab7, #ffeb3b);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
         }
 
         @media (max-width: 992px) {
@@ -479,7 +445,7 @@
         // Language data for all texts
         const languageData = {
             en: {
-                title: "RaddarTools - From Concept to Digital Solution with AI Engineering",
+                title: "RaddarTools - AI Product Builder: From Concept to Digital Solution with AI Engineering",
                 sections: [
                     { id: 'home', label: 'Mission Start' },
                     { id: 'about', label: 'Company Briefing' },
@@ -490,13 +456,13 @@
                 ],
                 home: {
                     h1: "RaddarTools",
-                    p1: "From Idea to Quality Software. Through Engineering.",
+                    p1: "We are an AI Product Builder. From idea to digital product, through engineering.",
                     p2: "We orchestrate Artificial Intelligence with Software Engineering methodologies to transform concepts into robust, consistent and sustainable digital solutions.",
                     button: "Start Mission"
                 },
                 about: {
                     h2: "Who We Are: The RaddarTools Essence",
-                    p1: "At RaddarTools, we are not just developers; we are software engineers who believe in the power of rigorous methodology and AI-driven innovation. Our mission is to bridge the gap between vision and digital reality, ensuring that every solution is not only functional but fundamentally superior.",
+                    p1: "At RaddarTools we act as an AI Product Builder: we are not just developers; we are software engineers who believe in the power of rigorous methodology and AI-driven innovation. Our mission is to bridge the gap between vision and digital reality, ensuring that every solution is not only functional but fundamentally superior.",
                     p2: "Our commitment is to quality, reliability and responsibility in software development, ensuring that the final product is a natural and efficient extension of your original idea.",
                     h3_pillars: "Our Pillars: Digital Solutions of Excellence",
                     robust_card_h4: "Robust",
@@ -594,7 +560,7 @@
                 footer: "© {year} RaddarTools. All rights reserved. Transforming Ideas into Quality Software."
             },
             pt: {
-                title: "RaddarTools - Do Conceito à Solução Digital com Engenharia de IA",
+                title: "RaddarTools - AI Product Builder: Do Conceito à Solução Digital com Engenharia de IA",
                 sections: [
                     { id: 'home', label: 'Início da Missão' },
                     { id: 'about', label: 'Briefing da Companhia' },
@@ -605,13 +571,13 @@
                 ],
                 home: {
                     h1: "RaddarTools",
-                    p1: "Da Ideia ao Software de Qualidade. Pela Engenharia.",
+                    p1: "Somos uma AI Product Builder. Da Ideia ao Software de Qualidade. Pela Engenharia.",
                     p2: "Orquestramos Inteligência Artificial com metodologias de Engenharia de Software para transformar conceitos em soluções digitais robustas, consistentes e sustentáveis.",
                     button: "Iniciar Missão"
                 },
                 about: {
                     h2: "Quem Somos: A Essência RaddarTools",
-                    p1: "Na RaddarTools, não somos apenas desenvolvedores; somos engenheiros de software que acreditam no poder da metodologia rigorosa e da inovação impulsionada por IA. Nossa missão é preencher a lacuna entre a visão e a realidade digital, garantindo que cada solução não seja apenas funcional, mas fundamentalmente superior.",
+                    p1: "Na RaddarTools atuamos como uma AI Product Builder: não somos apenas desenvolvedores; somos engenheiros de software que acreditam no poder da metodologia rigorosa e da inovação impulsionada por IA. Nossa missão é preencher a lacuna entre a visão e a realidade digital, garantindo que cada solução não seja apenas funcional, mas fundamentalmente superior.",
                     p2: "Nosso compromisso é com a qualidade, confiabilidade e responsabilidade no desenvolvimento de software, assegurando que o produto final seja uma extensão natural e eficiente da sua ideia original.",
                     h3_pillars: "Nossos Pilares: Soluções Digitais de Excelência",
                     robust_card_h4: "Robustas",
