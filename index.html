@@ -37,7 +37,7 @@
         }
         
         html {
-            scroll-padding-top: 130px;
+            scroll-padding-top: 400px;
         }        
 
         a {
@@ -139,7 +139,7 @@
             display: flex;
             gap: 10px;
             position: static;
-            margin-top: 1rem; 
+            margin-top: 1.25rem; 
             justify-content: center; 
             right: 2rem;
             top: 4rem;
@@ -710,7 +710,7 @@
             );
         }
 
-        function Navbar({ activeSection, setActiveSection, currentLangData }) {
+        function Navbar({ activeSection, setActiveSection, currentLangData, currentLanguage, setLanguage }) {
             return (
                 <header>
                     <div className="logo">
@@ -736,6 +736,7 @@
                             ))}
                         </ul>
                     </nav>
+                    <LanguageSwitcher currentLanguage={currentLanguage} setLanguage={setLanguage} />
                 </header>
             );
         }
@@ -807,9 +808,7 @@
 
             return (
                 <>
-                    <Navbar activeSection={activeSection} setActiveSection={setActiveSection} currentLangData={currentLangData} />
-                    <LanguageSwitcher currentLanguage={currentLanguage} setLanguage={setLanguage} />
-
+                    <Navbar activeSection={activeSection} setActiveSection={setActiveSection} currentLangData={currentLangData} currentLanguage={currentLanguage} setLanguage={setLanguage} />
                     <main>
                         <Section id="home">
                             <h1>{currentLangData.home.h1}</h1>
